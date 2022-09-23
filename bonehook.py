@@ -9,7 +9,7 @@ from datetime import date
 
 source =requests.get("https://legacy.cafebonappetit.com/api/2/menus?cafe=1374").json()
 #source =requests.get("https://legacy.cafebonappetit.com/api/2/menus?cafe=1374&date=2021-05-02").json() #syntax for arbitrary date selection
-webhookURL = "Webhook URL Goes Here"
+webhookURL = "webhook goes here"
 
 day = datetime.datetime.today().weekday()
 
@@ -17,48 +17,48 @@ breakfastData = []
 #Breakfast Data
 items = source['days'][0]['cafes']['1374']['dayparts'][0][0]['stations'][0]['items']
 for item in items:
-    if item[0] == '1':
-        breakfastData.append(source['items'][item]['label'].title()+ "\n")
+    if item[0] == '2':
+      breakfastData.append(source['items'][item]['label'].title()+ "\n")
 
 #Lunch Data
 lunchData = [[],[], [], []]
 items = source['days'][0]['cafes']['1374']['dayparts'][0][1]['stations'][1]['items']
 for item in items:
-    if item[0] == '1':
+    if item[0] == '2':
         lunchData[0].append(source['items'][item]['label'].title()+ "\n")
 
 items = source['days'][0]['cafes']['1374']['dayparts'][0][1]['stations'][2]['items']
 for item in items:
-    if item[0] == '1':
+    if item[0] == '2':
         lunchData[1].append(source['items'][item]['label'].title()+ "\n")
 
 items = source['days'][0]['cafes']['1374']['dayparts'][0][1]['stations'][3]['items']
 for item in items:
-    if item[0] == '1':
+    if item[0] == '2':
         lunchData[2].append(source['items'][item]['label'].title()+ "\n")
 
 items = source['days'][0]['cafes']['1374']['dayparts'][0][1]['stations'][4]['items']
 for item in items:
-    if item[0] == '1':
+    if item[0] == '2':
         lunchData[3].append(source['items'][item]['label'].title()+ "\n")
 
 #Dinner Data
 dinnerData = [[],[],  [],[]]
 items = source['days'][0]['cafes']['1374']['dayparts'][0][2]['stations'][1]['items']
 for item in items:
-    if item[0] == '1':
+    if item[0] == '2':
         dinnerData[0].append(source['items'][item]['label'].title()+ "\n")
 items = source['days'][0]['cafes']['1374']['dayparts'][0][2]['stations'][2]['items']
 for item in items:
-    if item[0] == '1':
+    if item[0] == '2':
         dinnerData[1].append(source['items'][item]['label'].title()+ "\n")
 items = source['days'][0]['cafes']['1374']['dayparts'][0][2]['stations'][3]['items']
 for item in items:
-    if item[0] == '1':
+    if item[0] == '2':
         dinnerData[2].append(source['items'][item]['label'].title()+ "\n")
 items = source['days'][0]['cafes']['1374']['dayparts'][0][2]['stations'][4]['items']
 for item in items:
-    if item[0] == '1':
+    if item[0] == '2':
         dinnerData[3].append(source['items'][item]['label'].title()+ "\n")
 
 prefacePayload = {
